@@ -10,15 +10,35 @@ import SwiftUI
 
 struct ButtonThemeView: View {
     @Binding var globalThemeBinding: String
-       var localTheme : String
-       var icone: String
-    var body: some View {
-        Circle()
+        var localTheme: String
+        var icone: String
+        var gradientTheme : Gradient
+        
+        var body: some View {
+            VStack {
+                ZStack {
+                    if self.globalThemeBinding == self.localTheme {
+                        Circle()
+                            .fill(LinearGradient(gradient: gradientTheme, startPoint: .leading, endPoint: .trailing))
+                            .frame(width: 75, height: 75)
+                    }
+                    else {
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 75, height: 75)
+                    }
+                    Image(systemName: icone)
+                }
+                Text(localTheme)
+            }
+            .onTapGesture {
+                self.globalThemeBinding = self.localTheme
+            }
+        }
     }
-}
 
 struct ButtonThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonThemeView(globalThemeBinding:.constant("music"), localTheme: "music", icone: "heart.fill")
+        ButtonThemeView(globalThemeBinding: .constant("music"), localTheme: "music", icone: "heart.fill", gradientTheme: GradientData.gradientPurple)
     }
 }
