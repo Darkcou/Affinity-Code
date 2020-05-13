@@ -11,7 +11,6 @@ import SwiftUI
 struct HomeButtonView: View {
      @Binding var globalLessonBinding: String
          var localLessonTheme: String
-         var lessonName: String
          var gradientBar: Gradient
          var body: some View {
              VStack {
@@ -23,7 +22,7 @@ struct HomeButtonView: View {
                                  .frame(width: 300, height: 55)
                                  .cornerRadius(24)
                                  .padding()
-                             Text(lessonName)
+                             Text("Variables")
                                  .font(.system(size:(25)))
                                  .foregroundColor(Color.black)
                          }
@@ -37,7 +36,7 @@ struct HomeButtonView: View {
                                  .frame(width: 300, height: 55)
                                  .cornerRadius(24)
                                  .padding()
-                             Text(lessonName)
+                             Text("Strings et entiers")
                                  .font(.system(size:(25)))
                                  .foregroundColor(Color.black)
                          }
@@ -51,7 +50,7 @@ struct HomeButtonView: View {
                                  .frame(width: 300, height: 55)
                                  .cornerRadius(24)
                                  .padding()
-                             Text(lessonName)
+                             Text("Doubles et booléens")
                                  .font(.system(size:(25)))
                                  .foregroundColor(Color.black)
                          }
@@ -65,7 +64,7 @@ struct HomeButtonView: View {
                                  .frame(width: 300, height: 55)
                                  .cornerRadius(24)
                                  .padding()
-                             Text(lessonName)
+                             Text("Strings multi-lignes")
                                  .font(.system(size:(25)))
                                  .foregroundColor(Color.black)
                          }
@@ -78,6 +77,6 @@ struct HomeButtonView: View {
 
 struct HomeButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeButtonView(globalLessonBinding: .constant("variables"), localLessonTheme: "music", lessonName: "variables", gradientBar: GradientData.gradientPurple)
+        HomeButtonView(globalLessonBinding: .constant("variables"), localLessonTheme: "music", gradientBar: GradientData.gradientPurple)
     }
 }

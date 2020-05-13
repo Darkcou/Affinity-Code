@@ -22,10 +22,10 @@ struct HomeView: View {
              ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "jeux", icone: "circle.fill", gradientTheme: GradientData.gradientSun)
              ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "cinéma", icone: "star.fill", gradientTheme: GradientData.gradientGreen)
          }
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "music", lessonName: "Variables", gradientBar: GradientData.gradientPurple)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "mode", lessonName: "Strings et entiers", gradientBar: GradientData.gradientBlue)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "jeux", lessonName: "Doubles et booléens", gradientBar: GradientData.gradientSun)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "cinéma", lessonName: "Strings multi-lignes", gradientBar: GradientData.gradientGreen)
+             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "music", gradientBar: GradientData.gradientPurple)
+             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "mode", gradientBar: GradientData.gradientBlue)
+             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "jeux", gradientBar: GradientData.gradientSun)
+             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "cinéma", gradientBar: GradientData.gradientGreen)
              
          }
          }
