@@ -9,29 +9,48 @@
 import SwiftUI
 
 struct HomeView: View {
- @State var globalTheme : String = "music"
-     
-     var body: some View {
-         ZStack {
-             Color(.black)
-                 .edgesIgnoringSafeArea(.all)
-         VStack {
-         HStack {
-             ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "music", icone: "heart.fill", gradientTheme: GradientData.gradientPurple)
-             ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "mode", icone: "triangle.fill", gradientTheme: GradientData.gradientBlue)
-             ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "jeux", icone: "circle.fill", gradientTheme: GradientData.gradientSun)
-             ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "cinéma", icone: "star.fill", gradientTheme: GradientData.gradientGreen)
-         }
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "music", gradientBar: GradientData.gradientPurple)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "mode", gradientBar: GradientData.gradientBlue)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "jeux", gradientBar: GradientData.gradientSun)
-             HomeButtonView(globalLessonBinding: $globalTheme, localLessonTheme: "cinéma", gradientBar: GradientData.gradientGreen)
-             
-         }
-         }
-     }
- }
+    @State var globalTheme : String = "Musique"
+    
+    func listRoom()-> some View {
+        var homeButton : LessonsView
+        switch globalTheme {
+        case "Mode":
+            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientBlue)
 
+        case "Jeux":
+            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.myYellow)
+
+        case "Cinéma":
+            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientGreen)
+
+        default:
+            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientPurple)
+        }
+        return VStack {
+            homeButton
+        }
+    }
+    
+    var body: some View {
+        ZStack {
+            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
+                Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
+                HStack {
+                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Musique", icone: "music", gradientTheme: GradientData.gradientPurple).padding(8)
+                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Mode", icone: "mode", gradientTheme: GradientData.gradientBlue).padding(8)
+                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Jeux", icone: "game", gradientTheme: GradientData.myYellow).padding(8)
+                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Cinéma", icone: "cinema", gradientTheme: GradientData.gradientGreen).padding(8)
+                }
+            
+                listRoom()
+
+            }
+            }
+        }
+    }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -27,9 +27,10 @@ struct ButtonThemeView: View {
                             .fill(Color.gray)
                             .frame(width: 75, height: 75)
                     }
-                    Image(systemName: icone)
+                    Image(icone)
+                        .resizable().frame(width: 50, height: 50)
                 }
-                Text(localTheme)
+                Text(localTheme).foregroundColor(Color.white).bold()
             }
             .onTapGesture {
                 self.globalThemeBinding = self.localTheme
@@ -39,6 +40,6 @@ struct ButtonThemeView: View {
 
 struct ButtonThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonThemeView(globalThemeBinding: .constant("music"), localTheme: "music", icone: "heart.fill", gradientTheme: GradientData.gradientPurple)
+        ButtonThemeView(globalThemeBinding: .constant("music"), localTheme: "music", icone: "music", gradientTheme: GradientData.gradientPurple)
     }
 }
