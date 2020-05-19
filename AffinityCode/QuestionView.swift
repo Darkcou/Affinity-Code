@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct QuestionView: View {
+    @State private var spells = ["Quel est le mot-clé pour une variable?", "Akali", "Azir", "Bard", "Brand", "Corki", "Fiddlesticks", "Galio", "Kayle", "Leblanc", "Morgana", "Zilean"].shuffled()
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

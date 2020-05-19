@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct LessonsView: View {
-    var mainLessons : [String?] = ["Variables", "Strings et entiers", "Doubles et booléens", "Strings Multi-lignes"]
-     @Binding var globalLessonBinding: String
+    var mainLessons : [String?] = ["Variables", "Strings et entiers", "Doubles et booléens", "Strings multi-lignes"]
+     @Binding var globalLessonBinding: String 
          var localLessonTheme: String
          var gradientBar: Gradient
     
