@@ -38,12 +38,7 @@ struct HomeView: View {
             VStack {
                 Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
                 Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
-                HStack {
-                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Musique", icone: "music", gradientTheme: GradientData.gradientPurple).padding(8)
-                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Mode", icone: "mode", gradientTheme: GradientData.gradientBlue).padding(8)
-                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Jeux", icone: "game", gradientTheme: GradientData.myYellow).padding(8)
-                    ButtonThemeView(globalThemeBinding: $globalTheme, localTheme: "Cinéma", icone: "cinema", gradientTheme: GradientData.gradientGreen).padding(8)
-                }
+                ThemeView(globalThemeBinding: $globalTheme)
             
                 listRoom()
 
