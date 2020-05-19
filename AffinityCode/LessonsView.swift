@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct LessonsView: View {
-    var mainLessons : [String?] = ["Variables", "Strings et entiers", "Doubles et booléens", "Strings multi-lignes"]
-     @Binding var globalLessonBinding: String 
-         var localLessonTheme: String
-         var gradientBar: Gradient
+    var mainLessons : [String?] = ["Variables", "Strings et entiers", "Doubles et booléens", "Strings Multi-lignes"]
+    @State var globalTheme : String  = "Musique"
+    var gradientBar: Gradient
     
     func list() -> some View {
-    return VStack {
-        ForEach(mainLessons, id: \.self) { mainLesson in
-            ZStack{
-                HomeButtonView(globalLessonBinding: self.$globalLessonBinding, localLessonTheme: self.localLessonTheme, gradientBar: self.gradientBar)
-                 Text(mainLesson!)
-                     .font(.system(size:(25)))
-                     .foregroundColor(Color.black)
-                .bold()
-            }}
+        return VStack {
+            ForEach(mainLessons, id: \.self) { mainLesson in
+                ZStack{
+                    HomeButtonView(globalLessonBinding: self.$globalTheme, localLessonTheme: self.globalTheme, gradientBar: self.gradientBar)
+                    Text(mainLesson!)
+                        .font(.system(size:(25)))
+                        .foregroundColor(Color.black)
+                        .bold()
+                }
+            }
         }
     }
     var body: some View {
@@ -36,6 +36,6 @@ struct LessonsView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsView(mainLessons: ["Variables"], globalLessonBinding: .constant("Variables"), localLessonTheme: "Musique", gradientBar: GradientData.gradientPurple)
+        LessonsView(mainLessons: ["Variables"], globalTheme : "Musique",   gradientBar: GradientData.gradientPurple)
     }
 }
