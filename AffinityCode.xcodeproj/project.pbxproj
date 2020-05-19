@@ -17,7 +17,6 @@
 		155B1C36246BEF6D00879520 /* ButtonThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C35246BEF6D00879520 /* ButtonThemeView.swift */; };
 		155B1C3A246BFA8A00879520 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C39246BFA8A00879520 /* HomeView.swift */; };
 		155B1C3C246BFB8D00879520 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C3B246BFB8D00879520 /* ChallengeView.swift */; };
-		155B1C3E246BFC1C00879520 /* ChallengeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C3D246BFC1C00879520 /* ChallengeButtonView.swift */; };
 		155B1C40246BFC6500879520 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C3F246BFC6500879520 /* HomeButtonView.swift */; };
 		155B1CF424740EB300879520 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1CF324740EB300879520 /* ThemeView.swift */; };
 		2E46E2B32472D58500685E4A /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E46E2B22472D58500685E4A /* QuestionView.swift */; };
@@ -38,7 +37,6 @@
 		155B1C35246BEF6D00879520 /* ButtonThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonThemeView.swift; sourceTree = "<group>"; };
 		155B1C39246BFA8A00879520 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		155B1C3B246BFB8D00879520 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
-		155B1C3D246BFC1C00879520 /* ChallengeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeButtonView.swift; sourceTree = "<group>"; };
 		155B1C3F246BFC6500879520 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		155B1CF324740EB300879520 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		2E46E2B22472D58500685E4A /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				155B1C3F246BFC6500879520 /* HomeButtonView.swift */,
 				155B1C35246BEF6D00879520 /* ButtonThemeView.swift */,
 				155B1C3B246BFB8D00879520 /* ChallengeView.swift */,
-				155B1C3D246BFC1C00879520 /* ChallengeButtonView.swift */,
 				155B1C25246BDB5500879520 /* Assets.xcassets */,
 				155B1C2A246BDB5500879520 /* LaunchScreen.storyboard */,
 				155B1C2D246BDB5500879520 /* Info.plist */,
@@ -196,7 +193,6 @@
 				155B1C36246BEF6D00879520 /* ButtonThemeView.swift in Sources */,
 				155B1C40246BFC6500879520 /* HomeButtonView.swift in Sources */,
 				155B1C24246BDB5300879520 /* ContentView.swift in Sources */,
-				155B1C3E246BFC1C00879520 /* ChallengeButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,22 +9,22 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var globalTheme : String = "Musique"
     
+    @State var themeSelect : String = "Musique"
     func listRoom()-> some View {
         var homeButton : LessonsView
-        switch globalTheme {
+        switch themeSelect {
         case "Mode":
-            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientBlue)
+            homeButton = LessonsView( globalTheme: themeSelect, gradientBar: GradientData.gradientBlue)
 
         case "Jeux":
-            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.myYellow)
+            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.myYellow)
 
         case "Cinéma":
-            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientGreen)
+            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientGreen)
 
         default:
-            homeButton = LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: globalTheme, gradientBar: GradientData.gradientPurple)
+            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientPurple)
         }
         return VStack {
             homeButton
@@ -38,7 +38,7 @@ struct HomeView: View {
             VStack {
                 Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
                 Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
-                ThemeView(globalThemeBinding: $globalTheme)
+                ThemeView(globalThemeBinding: $themeSelect)
             
                 listRoom()
 

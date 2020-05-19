@@ -11,14 +11,13 @@ import SwiftUI
 
 
 struct ChallengeView: View {
-    @State var globalTheme : String = "Musique"
     var body: some View {
         ZStack{
             LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
             VStack{Text("Defis").foregroundColor(Color.white).font(.system(size: 60)).padding()
                 Text("Sélectionner votre defi").foregroundColor(Color.white).font(.system(size: 25))
-                LessonsView(globalLessonBinding: $globalTheme, localLessonTheme: "Musique", gradientBar: Gradient(colors: [Color(.red),Color(.yellow)]))
+                LessonsView(gradientBar: Gradient(colors: [Color(.red),Color(.yellow)]))
             }
         }.edgesIgnoringSafeArea(.all)
         
