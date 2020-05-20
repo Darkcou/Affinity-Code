@@ -11,32 +11,25 @@ import SwiftUI
 
 
 struct ChallengeView: View {
-    
-    var challengeArray: [String] = ["VAR","Function","test","..."]
-    
     var body: some View {
         ZStack{
-            Color(.gray)
-            VStack{Text("Defis")
-                .font(.title)
-                ListChallenge()
+            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                
+                Image( systemName: "hare").resizable().foregroundColor(.white).frame(width:75,height: 50); Text("Defis").foregroundColor(Color.white).font(.system(size: 60))
+                Text("Sélectionner votre defi :").foregroundColor(Color.white).font(.system(size: 25))
+                Spacer().frame(height: 60)
+                LessonsView(gradientBar: Gradient(colors: [Color(.red),Color(.yellow)]))
             }
+            
         }.edgesIgnoringSafeArea(.all)
         
     }
-    func ListChallenge() -> some View {
-        return VStack {
-            ForEach(challengeArray, id: \.self) { challenge in
-                ZStack{
-                    ChallengeButtonView()
-                    Text("\(challenge)")
-                }}
+    
+    struct ChallengeView_Previews: PreviewProvider {
+        static var previews: some View {
+            ChallengeView()
         }
-    }
-}
-
-struct ChallengeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeView()
     }
 }
