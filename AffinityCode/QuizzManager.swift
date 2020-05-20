@@ -40,26 +40,26 @@ final class QuizManager: ObservableObject {
     ]
     
     private var questionsDoubleBool = [
-    
-    Question(question: "Qu'est qu'un double?", answer: Answer(text: "Un type comprenant des entiers et des décimals"), possibleAnswers: [Answer(text: "Un type comprenant des opérations mathématiques"), Answer(text: "Un type comprenant des formes géométriques"), Answer(text: "Un type comprenant des entiers et des décimals"), Answer(text: "Un type comprenant des puissances")]),
-    
-    Question(question: "A quoi sert un booléen?", answer: Answer(text: "A désigner un vrai ou faux"), possibleAnswers: [Answer(text: "A désigner une figure géométrique"), Answer(text: "A désigner un vrai ou faux"), Answer(text: "A désigner une variable spéciale "), Answer(text: "A désigner un double spécial")]),
-    
-    Question(question: "Parmi les réponses, laquelle fait référence à un Double ?", answer: Answer(text: "2.269"), possibleAnswers: [Answer(text: "2.269"), Answer(text: "10²"), Answer(text: "2%"), Answer(text: ">9")]),
-    
-    Question(question: "Quel est le mot clé pour un booléen ?", answer: Answer(text: "Bool"), possibleAnswers: [Answer(text: "Boule"), Answer(text: "Boole"), Answer(text: "Boul"), Answer(text: "Bool")])
+        
+        Question(question: "Qu'est qu'un double?", answer: Answer(text: "Un type comprenant des entiers et des décimals"), possibleAnswers: [Answer(text: "Un type comprenant des opérations mathématiques"), Answer(text: "Un type comprenant des formes géométriques"), Answer(text: "Un type comprenant des entiers et des décimals"), Answer(text: "Un type comprenant des puissances")]),
+        
+        Question(question: "A quoi sert un booléen?", answer: Answer(text: "A désigner un vrai ou faux"), possibleAnswers: [Answer(text: "A désigner une figure géométrique"), Answer(text: "A désigner un vrai ou faux"), Answer(text: "A désigner une variable spéciale "), Answer(text: "A désigner un double spécial")]),
+        
+        Question(question: "Parmi les réponses, laquelle fait référence à un Double ?", answer: Answer(text: "2.269"), possibleAnswers: [Answer(text: "2.269"), Answer(text: "10²"), Answer(text: "2%"), Answer(text: ">9")]),
+        
+        Question(question: "Quel est le mot clé pour un booléen ?", answer: Answer(text: "Bool"), possibleAnswers: [Answer(text: "Boule"), Answer(text: "Boole"), Answer(text: "Boul"), Answer(text: "Bool")])
     ]
     
     private var questionsMultiString = [
-    
-        Question(question: "A quoi sert le String multi-lignes ?", answer: Answer(text: "A écrire du texte sur plusieurs lignes"), possibleAnswers: [Answer(text: "A écrire davantage de texte"), Answer(text: "A écrire du texte avec des chiffres"), Answer(text: "A écrire")]),
         
-    Question(question: "Combien de guillemets sont necessaires au début et à la fin d'un String multi-lignes ?", answer: Answer(text: "3"), possibleAnswers: [Answer(text: "1"), Answer(text: "2"), Answer(text: "3")]),
-    
-    Question(question: "A quoi sert le String multi-lignes ?", answer: Answer(text: "A écrire du texte sur plusieurs lignes"), possibleAnswers: [Answer(text: "A écrire davantage de texte"), Answer(text: "A écrire du texte avec des chiffres"), Answer(text: "A écrire")]),
-    
-    Question(question: "A quoi sert le String multi-lignes ?", answer: Answer(text: "A écrire du texte sur plusieurs lignes"), possibleAnswers: [Answer(text: "A écrire davantage de texte"), Answer(text: "A écrire du texte avec des chiffres"), Answer(text: "A écrire")])
-    
+        Question(question: "A quoi sert le String multi-lignes ?", answer: Answer(text: "A écrire du texte sur plusieurs lignes"), possibleAnswers: [Answer(text: "A écrire davantage de texte"), Answer(text: "A écrire du texte avec des chiffres"), Answer(text: "A écrire"), Answer(text: "A écrire du texte sur plusieurs lignes")]),
+        
+        Question(question: "Combien de guillemets sont necessaires au début et à la fin d'un String multi-lignes ?", answer: Answer(text: "3"), possibleAnswers: [Answer(text: "1"), Answer(text: "2"), Answer(text: "3"), Answer(text: "4")]),
+        
+        Question(question: "Quel est le symbole permettant de revenir à la ligne dans un String multi-lignes ?", answer: Answer(text: "/"), possibleAnswers: [Answer(text: "-"), Answer(text: ">"), Answer(text: "*"), Answer(text: "/")]),
+        
+        Question(question: "Peut-on écrire du texte sur la même ligne que les guillemets ?", answer: Answer(text: "Non"), possibleAnswers: [Answer(text: "Oui"), Answer(text: "Non"), Answer(text: "Peut être"), Answer(text: "Ca dépends")])
+        
     ]
     
     init() {
@@ -70,6 +70,8 @@ final class QuizManager: ObservableObject {
     func getRandomQuestion() {
         guard var randomQuestion = questionsVariable.shuffled().first else { return }
         guard var randomQuestion2 = questionsStringInt.shuffled().first else { return }
+        guard var randomQuestion3 = questionsDoubleBool.shuffled().first else { return }
+        guard var randomQuestion4 = questionsMultiString.shuffled().first else { return }
         
         if questionsUsed.isEmpty || !questionsUsed.contains(randomQuestion) {
             questionsUsed.append(randomQuestion)
@@ -100,10 +102,22 @@ final class QuizManager: ObservableObject {
             currentQuestion = randomQuestion
         } else {
             for question3 in questionsUsed {
-                while randomQuestion2 == question3 {
-                    randomQuestion2 = questionsStringInt.shuffled().first!
-                    questionsUsed.append(randomQuestion2)
-                    currentQuestion = randomQuestion2
+                while randomQuestion3 == question3 {
+                    randomQuestion3 = questionsDoubleBool.shuffled().first!
+                    questionsUsed.append(randomQuestion3)
+                    currentQuestion = randomQuestion3
+                }
+            }
+        }
+        if questionsUsed.isEmpty || !questionsUsed.contains(randomQuestion) {
+            questionsUsed.append(randomQuestion)
+            currentQuestion = randomQuestion
+        } else {
+            for question4 in questionsUsed {
+                while randomQuestion4 == question4 {
+                    randomQuestion4 = questionsMultiString.shuffled().first!
+                    questionsUsed.append(randomQuestion4)
+                    currentQuestion = randomQuestion4
                 }
             }
         }
