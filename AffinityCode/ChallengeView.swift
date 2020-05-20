@@ -14,11 +14,15 @@ struct ChallengeView: View {
     var body: some View {
         ZStack{
             LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-            .edgesIgnoringSafeArea(.all)
-            VStack{Text("Defis").foregroundColor(Color.white).font(.system(size: 60)).padding()
-                Text("Sélectionner votre defi").foregroundColor(Color.white).font(.system(size: 25))
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                
+                Image( systemName: "hare").resizable().foregroundColor(.white).frame(width:75,height: 50); Text("Defis").foregroundColor(Color.white).font(.system(size: 60))
+                Text("Sélectionner votre defi :").foregroundColor(Color.white).font(.system(size: 25))
+                Spacer().frame(height: 60)
                 LessonsView(gradientBar: Gradient(colors: [Color(.red),Color(.yellow)]))
             }
+            
         }.edgesIgnoringSafeArea(.all)
         
     }
