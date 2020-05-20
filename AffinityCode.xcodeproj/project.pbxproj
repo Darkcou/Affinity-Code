@@ -26,6 +26,8 @@
 		2E7FAC042475416200FC06B2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC032475416200FC06B2 /* Question.swift */; };
 		2E7FAC082475548E00FC06B2 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC072475548E00FC06B2 /* AnswerButton.swift */; };
 		2E7FAC0A247555C700FC06B2 /* QuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC09247555C700FC06B2 /* QuizzView.swift */; };
+		2E7FAC0C24755CA400FC06B2 /* LessonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */; };
+		2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */; };
 		2ECFAC80246C363000965D7F /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC7F246C363000965D7F /* LessonsView.swift */; };
 		2ECFAC8A246D8F5E00965D7F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC89246D8F5E00965D7F /* Models.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		2E7FAC032475416200FC06B2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2E7FAC072475548E00FC06B2 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		2E7FAC09247555C700FC06B2 /* QuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzView.swift; sourceTree = "<group>"; };
+		2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailsView.swift; sourceTree = "<group>"; };
+		2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesView.swift; sourceTree = "<group>"; };
 		2ECFAC7F246C363000965D7F /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
 		2ECFAC89246D8F5E00965D7F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,8 @@
 		155B1C1E246BDB5300879520 /* AffinityCode */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */,
+				2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */,
 				2E7FAC09247555C700FC06B2 /* QuizzView.swift */,
 				2E7FAC072475548E00FC06B2 /* AnswerButton.swift */,
 				2E7FAC032475416200FC06B2 /* Question.swift */,
@@ -210,7 +216,9 @@
 				2ECFAC80246C363000965D7F /* LessonsView.swift in Sources */,
 				2E7FABFE24753B5700FC06B2 /* ResultTextModifier.swift in Sources */,
 				2E7FABFC24753AEA00FC06B2 /* ResultView.swift in Sources */,
+				2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */,
 				155B1C34246BEEF200879520 /* ModelButton.swift in Sources */,
+				2E7FAC0C24755CA400FC06B2 /* LessonDetailsView.swift in Sources */,
 				155B1C3C246BFB8D00879520 /* ChallengeView.swift in Sources */,
 				155B1C22246BDB5300879520 /* SceneDelegate.swift in Sources */,
 				155B1C36246BEF6D00879520 /* ButtonThemeView.swift in Sources */,
