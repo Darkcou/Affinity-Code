@@ -10,19 +10,22 @@ import SwiftUI
 
 struct HomeView: View {
     
+    var lesson = allLessons.variable
+    
     @State var themeSelect : String = "Musique"
+    
     func listRoom()-> some View {
         var homeButton : LessonsView
         switch themeSelect {
         case "Mode":
             homeButton = LessonsView( globalTheme: themeSelect, gradientBar: GradientData.gradientBlue)
-
+            
         case "Jeux":
             homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.myYellow)
-
+            
         case "Cinéma":
             homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientGreen)
-
+            
         default:
             homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientPurple)
         }
@@ -32,20 +35,20 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
-                Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
-                ThemeView(globalThemeBinding: $themeSelect)
-            
-                listRoom()
-
-            }
+        NavigationView {
+            ZStack {
+                LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
+                    ThemeView(globalThemeBinding: $themeSelect)
+                        listRoom()
+                    
+                }
             }
         }
     }
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

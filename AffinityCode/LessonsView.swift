@@ -16,12 +16,18 @@ struct LessonsView: View {
     func list() -> some View {
         return VStack {
             ForEach(mainLessons, id: \.self) { mainLesson in
+                NavigationLink(destination: LessonDetailsView(globalThemeBinding: self.$globalTheme)) {
                 ZStack{
                     HomeButtonView(globalLessonBinding: self.$globalTheme, localLessonTheme: self.globalTheme, gradientBar: self.gradientBar)
                     Text(mainLesson!)
-                        .font(.system(size:(25)))
+                    .bold()
+                        .font(.system(size:30))
+                        .frame(width: 300, height: 24, alignment: .center)
+                        .padding()
+                        .background(LinearGradient(gradient: self.gradientBar, startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(Color.black)
-                        .bold()
+                    .cornerRadius(34)
+                    }
                 }
             }
         }

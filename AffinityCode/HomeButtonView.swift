@@ -19,7 +19,7 @@ struct HomeButtonView: View {
                          if self.globalLessonBinding == self.localLessonTheme {
                              Rectangle()
                                  .fill(LinearGradient(gradient: gradientBar, startPoint: .leading, endPoint: .trailing))
-                                 .frame(width: 300, height: 55)
+                                 .frame(width: 330, height: 55)
                                  .cornerRadius(24)
                                  .padding()
                          }
