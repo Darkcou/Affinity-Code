@@ -10,8 +10,9 @@ import SwiftUI
 
 struct QuizzView: View {
     
-    @ObservedObject private var quizManager = QuizzManager()
+    @ObservedObject private var quizManager = QuizzManager(activity: "Variables")
     
+    @State private var activity = "Variables"
     @State private var guessedCorrectly = false
     @State private var showResult = false
     @State private var textColor = Color.white
@@ -57,7 +58,7 @@ struct QuizzView: View {
                 quizManager.questionsAsked = 0
                 quizManager.correctAnswers = 0
                 textColor = .white
-                quizManager.getRandomQuestion()
+                quizManager.getRandomQuestion(activity: activity)
             }
             
             private func updateResult() {
@@ -73,7 +74,7 @@ struct QuizzView: View {
                 // Executes the nextRound method at the dispatch time on the main queue
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                     self.textColor = .white
-                    self.quizManager.getRandomQuestion()
+                    self.quizManager.getRandomQuestion(activity: self.activity)
                 }
             }
         }

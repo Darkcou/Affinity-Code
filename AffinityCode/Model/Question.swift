@@ -10,12 +10,17 @@ import Foundation
 
 struct Question {
     var id: String = UUID().uuidString
+    var type:Activity
     var question: String
     var answer: Answer
     var possibleAnswers: [Answer]
 }
 
-extension Question: Equatable {}
+extension Question: Equatable {
+    func getType() -> String {
+        return self.type.rawValue
+    }
+}
 
 struct Answer: Identifiable, Equatable {
     var id: String = UUID().uuidString
