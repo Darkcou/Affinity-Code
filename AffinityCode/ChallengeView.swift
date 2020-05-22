@@ -22,7 +22,7 @@ struct ChallengeView: View {
                 Image( systemName: "hare").resizable().foregroundColor(.white).frame(width:75,height: 50); Text("Defis").foregroundColor(Color.white).font(.system(size: 60))
                 Text("Sélectionner votre defi :").foregroundColor(Color.white).font(.system(size: 25))
                 Spacer().frame(height: 60)
-                LessonView(lesson: lesson, globalThemeBinding: $globalThemeBinding)
+                LessonView(lessons: lesson, globalThemeBinding: $globalThemeBinding)
             }
             
         }.edgesIgnoringSafeArea(.all)
@@ -31,7 +31,7 @@ struct ChallengeView: View {
     
     struct ChallengeView_Previews: PreviewProvider {
         static var previews: some View {
-            ChallengeView(lesson: .init(title: "Variables", content: "cours", type: .music), globalThemeBinding: .constant(.music))
+            ChallengeView(lesson: .init(title: .variables, content: "cours", type: .music), globalThemeBinding: .constant(.music))
         }
     }
 }

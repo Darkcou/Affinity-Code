@@ -30,6 +30,6 @@ struct LessonDetailsView: View {
 
 struct LessonDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailsView(lesson: .init(title: "Variables", content: "cours", type: .music), globalThemeBinding: .constant( .music))
+        LessonDetailsView(lesson: .init(title: .variables, content: "cours", type: .music), globalThemeBinding: .constant( .music))
     }
 }

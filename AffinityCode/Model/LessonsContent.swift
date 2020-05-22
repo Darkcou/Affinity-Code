@@ -61,14 +61,17 @@ enum Activity : String, CaseIterable {
 }
 
 struct Lesson {
-    var title: String
+    var title: Activity
     var content: String
     var type : ThemeType
     
-    static let allLessons : [Lesson] = [Lesson.init(title: "Variables", content: "Cours 1", type: .music),
-                                        Lesson.init(title: "String & Int", content: "Cours 2", type: .music),
-                                        Lesson.init(title: "Doubles & booléens", content: "Cours 3", type: .music),
-                                        Lesson.init(title: "Strings multi-lignes", content: "Cours 4", type: .music)]
+    func getTitleString() -> String {
+        return self.title.rawValue
+    }
+    static let allLessons : [Lesson] = [Lesson.init(title: Activity.variables, content: "Cours 1", type: .music),
+                                        Lesson.init(title: Activity.stringsEntiers, content: "Cours 2", type: .music),
+                                        Lesson.init(title: .doublesBooléens, content: "Cours 3", type: .music),
+                                        Lesson.init(title: Activity.stringsMulti, content: "Cours 4", type: .music)]
 }
 
 enum allLessons: String {

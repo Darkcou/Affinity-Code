@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct HomeButtonView: View {
-     @Binding var globalLessonBinding: ThemeType
-         var localLessonTheme: ThemeType
+     @Binding var globalThemeBinding: ThemeType
+         var lessons: Lesson
          var body: some View {
+            NavigationLink(destination: LessonDetailsView(lesson: lessons, globalThemeBinding: self.$globalThemeBinding)) {
              VStack {
-                 Button(action: {print("test")}) {
                      ZStack {
-                         if self.globalLessonBinding == self.localLessonTheme {
                              Rectangle()
-                                .fill(LinearGradient(gradient: self.globalLessonBinding.gradient , startPoint: .leading, endPoint: .trailing))
+                                .fill(LinearGradient(gradient: self.globalThemeBinding.gradient , startPoint: .leading, endPoint: .trailing))
                                  .frame(width: 330, height: 55)
                                  .cornerRadius(24)
                                  .padding()
@@ -26,11 +25,10 @@ struct HomeButtonView: View {
                  }
              }
          }
-     }
 
 
 struct HomeButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeButtonView(globalLessonBinding: .constant(.music), localLessonTheme: .music)
+        HomeButtonView(globalThemeBinding: .constant(.music), lessons: .init(title: .variables, content: "Cours 1", type: .music))
     }
 }

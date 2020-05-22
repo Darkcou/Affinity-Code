@@ -12,7 +12,7 @@ struct LessonContentView: View {
     var lesson: Lesson
     var body: some View {
         VStack {
-            Text(lesson.title).foregroundColor(Color.white)
+            Text(lesson.getTitleString()).foregroundColor(Color.white)
                 .font(.system(size: 30))
                 .padding()
             .padding()
@@ -22,6 +22,6 @@ struct LessonContentView: View {
 
 struct LessonContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonContentView(lesson: .init(title: "Variables", content: "cours", type: .music))
+        LessonContentView(lesson: .init(title: .variables, content: "cours", type: .music))
     }
 }

@@ -17,16 +17,16 @@ struct HomeView: View {
         var homeButton : LessonView
         switch globalThemeBinding {
         case .mode:
-            homeButton = LessonView(lesson: lessons[0], globalThemeBinding: $globalThemeBinding)
+            homeButton = LessonView(lessons: lessons[0], globalThemeBinding: $globalThemeBinding)
             
         case .game:
-            homeButton = LessonView( lesson : lessons[1], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView( lessons : lessons[1], globalThemeBinding: $globalThemeBinding )
             
         case .cinema:
-            homeButton = LessonView( lesson : lessons[2], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView( lessons : lessons[2], globalThemeBinding: $globalThemeBinding )
             
         case .music:
-            homeButton = LessonView( lesson : lessons[3], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView( lessons : lessons[3], globalThemeBinding: $globalThemeBinding )
         }
         return VStack {
             homeButton
