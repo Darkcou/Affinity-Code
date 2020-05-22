@@ -16,7 +16,7 @@ struct LessonsView: View {
     func list() -> some View {
         return VStack {
             ForEach(mainLessons, id: \.self) { mainLesson in
-                NavigationLink(destination: LessonDetailsView(globalThemeBinding: self.$globalTheme)) {
+                NavigationLink(destination: LessonDetailsView(globalThemeBinding: self.$globalTheme, gradientTheme: self.gradientBar)) {
                 ZStack{
                     HomeButtonView(globalLessonBinding: self.$globalTheme, localLessonTheme: self.globalTheme, gradientBar: self.gradientBar)
                     Text(mainLesson!)

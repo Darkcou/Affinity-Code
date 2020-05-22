@@ -12,7 +12,7 @@ struct ThemeView: View {
     @Binding var globalThemeBinding: String
     var localTheme: String = "Musique"
     var icone: String = "music"
-    var gradientTheme : Gradient = GradientData.gradientPurple
+   @State var gradientTheme : Gradient = GradientData.gradientPurple
     
     var body: some View {
         VStack {

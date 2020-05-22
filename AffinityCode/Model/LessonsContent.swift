@@ -8,10 +8,16 @@
 
 import Foundation
 
+enum ThemeType : String {
+    case music = "Musique"
+    case mode = "Mode"
+    case game = "Jeux"
+    case cinema = "Cinéma"
+}
+
 struct Lesson {
-    var id = UUID()
+    var type : ThemeType
     var lesson: String
-    var theme: ThemeView
 }
 
 enum allLessons: String {

@@ -12,6 +12,7 @@ struct ExamplesView: View {
     
     @Binding var themeImageExamples : String
     @Binding var themeExample : String
+    var themeGradient : Gradient = GradientData.gradientPurple
     
     var body: some View {
         ZStack {
@@ -34,13 +35,13 @@ struct ExamplesView: View {
                     Text(themeExample).bold()
                 }
             }
-        .padding().background(LinearGradient(gradient: GradientData.gradientPurple, startPoint: .leading, endPoint: .trailing))
+        .padding().background(LinearGradient(gradient: themeGradient, startPoint: .leading, endPoint: .trailing))
         }
     }
 }
 
 struct ExamplesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExamplesView(themeImageExamples: .constant("music"), themeExample: .constant("Jukebox"))
+        ExamplesView(themeImageExamples: .constant("radio"), themeExample: .constant("Jukebox"))
     }
 }
