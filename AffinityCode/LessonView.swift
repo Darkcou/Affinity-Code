@@ -11,13 +11,13 @@ import SwiftUI
 struct LessonView: View {
     
     @State var lesson : Lesson
-    @State var globalThemeBinding : ThemeType
+    @Binding var globalThemeBinding : ThemeType
     
     var body: some View {
         VStack {
             NavigationLink(destination: LessonDetailsView(lesson: lesson, globalThemeBinding: $globalThemeBinding)) {
             ZStack{
-              //  HomeButtonView(globalLessonBinding: self.$globalTheme, localLessonTheme: self.globalTheme, gradientBar: self.gradientBar)
+          //      HomeButtonView(globalLessonBinding: self.$globalTheme, localLessonTheme: self.globalTheme, gradientBar: self.gradientBar)
                 Text(lesson.title)
                 .bold()
                     .font(.system(size:30))
@@ -33,8 +33,8 @@ struct LessonView: View {
 }
 
 
-/*struct LessonsView_Previews: PreviewProvider {
+struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonView(globalTheme : "Musique",   gradientBar: GradientData.gradientPurple)
+        LessonView(lesson: .init(title: "Variables", content: "Cours", type: .music), globalThemeBinding: .constant( .music))
     }
-} */
+}

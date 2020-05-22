@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State var globalThemeBinding : ThemeType = .music
+    @State var globalThemeBinding : ThemeType = .cinema
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
