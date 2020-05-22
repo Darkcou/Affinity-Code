@@ -7,17 +7,68 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum ThemeType : String {
-    case music = "Musique"
-    case mode = "Mode"
-    case game = "Jeux"
-    case cinema = "Cinéma"
+enum ThemeType : CaseIterable {
+    case music
+    case mode
+    case game
+    case cinema
+    
+    var gradient: Gradient {
+        switch self {
+        case .music:
+            return GradientData.gradientPurple
+        case .mode:
+            return GradientData.gradientBlue
+        case .game:
+            return GradientData.myYellow
+        case .cinema:
+            return GradientData.gradientGreen
+        }
+    }
+    var name: String {
+        switch self {
+        case .music:
+            return "Musique"
+        case .mode:
+            return "Mode"
+        case .game:
+            return "Jeux"
+        case .cinema:
+            return "Cinéma"
+        }
+    }
+    var imageName: String {
+        switch self {
+        case .music:
+            return "music"
+        case .mode:
+            return "mode"
+        case .game:
+            return "game"
+        case .cinema:
+            return "cinema"
+        }
+    }
+}
+
+enum Activity : String, CaseIterable {
+    case variables = "Variables"
+    case stringsEntiers = "Strings et entiers"
+    case doublesBooléens = "Doubles et booléens"
+    case stringsMulti = "Strings Multi-lignes"
 }
 
 struct Lesson {
+    var title: String
+    var content: String
     var type : ThemeType
-    var lesson: String
+    
+    static let allLessons : [Lesson] = [Lesson.init(title: "Variables", content: "Cours 1", type: .music),
+                                        Lesson.init(title: "String & Int", content: "Cours 2", type: .music),
+                                        Lesson.init(title: "Doubles & booléens", content: "Cours 3", type: .music),
+                                        Lesson.init(title: "Strings multi-lignes", content: "Cours 4", type: .music)]
 }
 
 enum allLessons: String {

@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct LessonContentView: View {
-    @Binding var lessonName: String
-    var lesson: allLessons
+    var lesson: Lesson
     var body: some View {
         VStack {
-            Text(lessonName).foregroundColor(Color.white)
+            Text(lesson.title).foregroundColor(Color.white)
                 .font(.system(size: 30))
                 .padding()
             .padding()
@@ -23,6 +22,6 @@ struct LessonContentView: View {
 
 struct LessonContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonContentView(lessonName: .constant("Variables"), lesson: .variable)
+        LessonContentView(lesson: .init(title: "Variables", content: "cours", type: .music))
     }
 }

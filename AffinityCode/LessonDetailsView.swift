@@ -10,27 +10,19 @@ import SwiftUI
 
 struct LessonDetailsView: View {
     
-    @Binding var globalThemeBinding: String
-    var localTheme: String = "Musique"
-    var icone: String = "music"
-    @State var gradientTheme : Gradient = GradientData.gradientPurple
-    
-    @State var lessonName = "Variables"
-    @State var lesson = allLessons.self
-    @State var themeImageExamples = "music"
-    @State var themeExample = "Jukebox"
-    
+    @State var lesson : Lesson
+    @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
         VStack {
-        ThemeView(globalThemeBinding: $globalThemeBinding, localTheme: localTheme, icone: icone, gradientTheme: gradientTheme)
+            ThemeView(globalThemeBinding: self.$globalThemeBinding)
             
-            LessonContentView(lessonName: $lessonName, lesson: lesson.variable)
-            ExamplesView(themeImageExamples: $themeImageExamples, themeExample: $themeExample, themeGradient: gradientTheme)
-            ChallengeButtonLessonDetails(buttonColor: $gradientTheme).padding(50)
+            LessonContentView(lesson: lesson)
+        //    ExamplesView(themeImageExamples: $themeImageExamples, themeExample: $themeExample, themeGradient: self.lesson.type.gradient)
+            ChallengeButtonLessonDetails(themeType: lesson.type)
             }
         }
     }
@@ -38,6 +30,6 @@ struct LessonDetailsView: View {
 
 struct LessonDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailsView(globalThemeBinding: .constant("Musique"), localTheme: "Musique", icone: "music", gradientTheme: GradientData.gradientPurple)
+        LessonDetailsView(lesson: .init(title: "Variables", content: "cours", type: .music), globalThemeBinding: .constant( .music))
     }
 }

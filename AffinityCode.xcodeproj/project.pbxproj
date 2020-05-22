@@ -32,7 +32,7 @@
 		2E7FAC0C24755CA400FC06B2 /* LessonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */; };
 		2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */; };
 		2E7FAC10247560BB00FC06B2 /* ResultTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0F247560BB00FC06B2 /* ResultTextModifier.swift */; };
-		2ECFAC80246C363000965D7F /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC7F246C363000965D7F /* LessonsView.swift */; };
+		2ECFAC80246C363000965D7F /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC7F246C363000965D7F /* LessonView.swift */; };
 		2ECFAC8A246D8F5E00965D7F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC89246D8F5E00965D7F /* Models.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailsView.swift; sourceTree = "<group>"; };
 		2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesView.swift; sourceTree = "<group>"; };
 		2E7FAC0F247560BB00FC06B2 /* ResultTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTextModifier.swift; sourceTree = "<group>"; };
-		2ECFAC7F246C363000965D7F /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
+		2ECFAC7F246C363000965D7F /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		2ECFAC89246D8F5E00965D7F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 				2E7FAC09247555C700FC06B2 /* QuizzView.swift */,
 				2E7FAC072475548E00FC06B2 /* AnswerButton.swift */,
 				2E7FABFB24753AEA00FC06B2 /* ResultView.swift */,
-				2ECFAC7F246C363000965D7F /* LessonsView.swift */,
+				2ECFAC7F246C363000965D7F /* LessonView.swift */,
 				155B1C1F246BDB5300879520 /* AppDelegate.swift */,
 				155B1C21246BDB5300879520 /* SceneDelegate.swift */,
 				155B1C23246BDB5300879520 /* ContentView.swift */,
@@ -229,7 +229,7 @@
 				155B1C3A246BFA8A00879520 /* HomeView.swift in Sources */,
 				2E7FAC082475548E00FC06B2 /* AnswerButton.swift in Sources */,
 				155B1CF424740EB300879520 /* ThemeView.swift in Sources */,
-				2ECFAC80246C363000965D7F /* LessonsView.swift in Sources */,
+				2ECFAC80246C363000965D7F /* LessonView.swift in Sources */,
 				2E7FABFC24753AEA00FC06B2 /* ResultView.swift in Sources */,
 				2E7FAC10247560BB00FC06B2 /* ResultTextModifier.swift in Sources */,
 				2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */,

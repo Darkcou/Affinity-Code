@@ -9,17 +9,18 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State var globalThemeBinding : ThemeType = .music
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
     var body: some View {
         TabView {
-            HomeView().tabItem {
+            HomeView(lessons: Lesson.allLessons, globalThemeBinding: $globalThemeBinding).tabItem {
                 Image(systemName: "house")
                 Text("Home").tag(1)
             }
 
-            ChallengeView().tabItem {
+            ChallengeView(lesson: Lesson.allLessons[0], globalThemeBinding: $globalThemeBinding).tabItem {
                 Image( systemName: "hare")
                 Text("Defis").tag(2)
             }

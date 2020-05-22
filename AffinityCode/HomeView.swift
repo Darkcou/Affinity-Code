@@ -10,24 +10,25 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var lesson = allLessons.variable
+    var lessons : [Lesson]
+    @Binding var globalThemeBinding : ThemeType
     
-    @State var themeSelect : String = "Musique"
+    @State var themeSelect : ThemeType = .music
     
     func listRoom()-> some View {
-        var homeButton : LessonsView
+        var homeButton : LessonView
         switch themeSelect {
-        case "Mode":
-            homeButton = LessonsView( globalTheme: themeSelect, gradientBar: GradientData.gradientBlue)
+        case .mode:
+            homeButton = LessonView(lesson: lessons[0], globalThemeBinding: globalThemeBinding)
             
-        case "Jeux":
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.myYellow)
+        case .game:
+            homeButton = LessonView( lesson : lessons[1], globalThemeBinding: globalThemeBinding )
             
-        case "Cinéma":
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientGreen)
+        case .cinema:
+            homeButton = LessonView( lesson : lessons[2], globalThemeBinding: globalThemeBinding )
             
-        default:
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientPurple)
+        case .music:
+            homeButton = LessonView( lesson : lessons[3], globalThemeBinding: globalThemeBinding )
         }
         return VStack {
             homeButton
@@ -52,6 +53,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(lessons: Lesson.allLessons, globalThemeBinding: .constant(.music))
     }
 }
