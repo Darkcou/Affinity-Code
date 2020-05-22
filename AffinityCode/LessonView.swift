@@ -23,7 +23,7 @@ struct LessonView: View {
                     .font(.system(size:30))
                     .frame(width: 300, height: 24, alignment: .center)
                     .padding()
-                    .background(LinearGradient(gradient: self.lesson.type.gradient , startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: globalThemeBinding.gradient, startPoint: .leading, endPoint: .trailing))
                     .foregroundColor(Color.black)
                 .cornerRadius(34)
                 }

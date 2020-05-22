@@ -13,11 +13,9 @@ struct HomeView: View {
     var lessons : [Lesson]
     @Binding var globalThemeBinding : ThemeType
     
-    @State var themeSelect : ThemeType = .music
-    
     func listRoom()-> some View {
         var homeButton : LessonView
-        switch themeSelect {
+        switch globalThemeBinding {
         case .mode:
             homeButton = LessonView(lesson: lessons[0], globalThemeBinding: $globalThemeBinding)
             
@@ -42,7 +40,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
-                    ThemeView(globalThemeBinding: $themeSelect)
+                    ThemeView(globalThemeBinding: $globalThemeBinding)
                         listRoom()
                     
                 }

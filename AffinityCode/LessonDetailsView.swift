@@ -22,7 +22,7 @@ struct LessonDetailsView: View {
             
             LessonContentView(lesson: lesson)
         //    ExamplesView(themeImageExamples: $themeImageExamples, themeExample: $themeExample, themeGradient: self.lesson.type.gradient)
-            ChallengeButtonLessonDetails(themeType: lesson.type)
+            ChallengeButtonLessonDetails(globalThemeBinding: $globalThemeBinding)
             }
         }
     }
