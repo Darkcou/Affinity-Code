@@ -13,15 +13,15 @@ struct ThemeView: View {
     @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
-        VStack {
-            Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
-            HStack {
-                ForEach(ThemeType.allCases, id: \.self) { theme in
-                    ButtonThemeView(globalThemeBinding: self.$globalThemeBinding, localTheme: theme).padding(8)
+            VStack {
+                Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
+                HStack {
+                    ForEach(ThemeType.allCases, id: \.self) { theme in
+                        ButtonThemeView(globalThemeBinding: self.$globalThemeBinding, localTheme: theme).padding(8)
+                    }
                 }
             }
         }
-    }
 }
 
 struct ThemeView_Previews: PreviewProvider {

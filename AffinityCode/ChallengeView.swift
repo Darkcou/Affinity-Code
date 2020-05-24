@@ -11,27 +11,28 @@ import SwiftUI
 
 
 struct ChallengeView: View {
-    var lesson : Lesson
+    @Binding var lesson : LessonContent
     @Binding var globalThemeBinding : ThemeType
     var body: some View {
-        ZStack{
-            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            VStack{
-                
-                Image( systemName: "hare").resizable().foregroundColor(.white).frame(width:75,height: 50); Text("Defis").foregroundColor(Color.white).font(.system(size: 60))
-                Text("Sélectionner votre defi :").foregroundColor(Color.white).font(.system(size: 25))
-                Spacer().frame(height: 60)
-                LessonView(lessons: lesson, globalThemeBinding: $globalThemeBinding)
+        NavigationView {
+            ZStack{
+                LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
+                    
+                    Image( systemName: "hare").resizable().foregroundColor(.white).frame(width:75,height: 50); Text("Defis").foregroundColor(Color.white).font(.system(size: 60))
+                    Text("Sélectionner votre defi :").foregroundColor(Color.white).font(.system(size: 25))
+                    Spacer().frame(height: 60)
+                    
+                    ChallengeButtonsView()
+                }
             }
-            
         }.edgesIgnoringSafeArea(.all)
-        
     }
     
     struct ChallengeView_Previews: PreviewProvider {
         static var previews: some View {
-            ChallengeView(lesson: .init(title: .variables, content: "cours", type: .music), globalThemeBinding: .constant(.music))
+            ChallengeView(lesson: .constant(.variables), globalThemeBinding: .constant(.music))
         }
     }
 }

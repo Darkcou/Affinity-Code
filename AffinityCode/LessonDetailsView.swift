@@ -9,20 +9,22 @@
 import SwiftUI
 
 struct LessonDetailsView: View {
-    
-    @State var lesson : Lesson
+    var lesson : LessonContent
     @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-            .edgesIgnoringSafeArea(.all)
-        VStack {
-            ThemeView(globalThemeBinding: self.$globalThemeBinding)
-            
-            LessonContentView(lesson: lesson)
-        //    ExamplesView(themeImageExamples: $themeImageExamples, themeExample: $themeExample, themeGradient: self.lesson.type.gradient)
-            ChallengeButtonLessonDetails(globalThemeBinding: $globalThemeBinding)
+        NavigationView{
+            ZStack {
+                LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    ThemeView(globalThemeBinding: self.$globalThemeBinding)
+                    
+                    LessonContentView(lesson: lesson)
+                    Spacer()
+                    ExamplesView(globalThemeBinding: $globalThemeBinding)
+                    ChallengeButtonLessonDetails(globalThemeBinding: $globalThemeBinding).padding(40)
+                }
             }
         }
     }
@@ -30,6 +32,6 @@ struct LessonDetailsView: View {
 
 struct LessonDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailsView(lesson: .init(title: .variables, content: "cours", type: .music), globalThemeBinding: .constant( .music))
+        LessonDetailsView(lesson: .variables, globalThemeBinding: .constant( .music))
     }
 }

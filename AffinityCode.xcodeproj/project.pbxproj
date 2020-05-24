@@ -32,6 +32,7 @@
 		2E7FAC0C24755CA400FC06B2 /* LessonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */; };
 		2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */; };
 		2E7FAC10247560BB00FC06B2 /* ResultTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC0F247560BB00FC06B2 /* ResultTextModifier.swift */; };
+		2EA41CAD247B048E005424BF /* ChallengeButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA41CAC247B048E005424BF /* ChallengeButtonsView.swift */; };
 		2ECFAC80246C363000965D7F /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC7F246C363000965D7F /* LessonView.swift */; };
 		2ECFAC8A246D8F5E00965D7F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFAC89246D8F5E00965D7F /* Models.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailsView.swift; sourceTree = "<group>"; };
 		2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesView.swift; sourceTree = "<group>"; };
 		2E7FAC0F247560BB00FC06B2 /* ResultTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTextModifier.swift; sourceTree = "<group>"; };
+		2EA41CAC247B048E005424BF /* ChallengeButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeButtonsView.swift; sourceTree = "<group>"; };
 		2ECFAC7F246C363000965D7F /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		2ECFAC89246D8F5E00965D7F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 		155B1C1E246BDB5300879520 /* AffinityCode */ = {
 			isa = PBXGroup;
 			children = (
+				2EA41CAC247B048E005424BF /* ChallengeButtonsView.swift */,
 				2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */,
 				2E42B12E2475857A003C5F0A /* LessonContentView.swift */,
 				2E42B12C24757ED5003C5F0A /* ChallengeButtonLessonDetails.swift */,
@@ -221,6 +224,7 @@
 				2ECFAC8A246D8F5E00965D7F /* Models.swift in Sources */,
 				2E7FAC022475412400FC06B2 /* QuizzManager.swift in Sources */,
 				155B1C20246BDB5300879520 /* AppDelegate.swift in Sources */,
+				2EA41CAD247B048E005424BF /* ChallengeButtonsView.swift in Sources */,
 				2E42B12F2475857A003C5F0A /* LessonContentView.swift in Sources */,
 				2E7FAC042475416200FC06B2 /* Question.swift in Sources */,
 				2E7FAC0A247555C700FC06B2 /* QuizzView.swift in Sources */,

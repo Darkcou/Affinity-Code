@@ -9,19 +9,19 @@
 import SwiftUI
 
 struct LessonContentView: View {
-    var lesson: Lesson
+   var lesson: LessonContent
     var body: some View {
-        VStack {
-            Text(lesson.getTitleString()).foregroundColor(Color.white)
+        VStack(alignment: .center) {
+            Text(lesson.lessonTitle).foregroundColor(Color.white)
                 .font(.system(size: 30))
                 .padding()
-            .padding()
-            }
+            Text(lesson.lessonContent).foregroundColor(Color.white).font(.system(size: 20))
+                .padding(0.1)
         }
     }
-
+}
 struct LessonContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonContentView(lesson: .init(title: .variables, content: "cours", type: .music))
+        LessonContentView(lesson: .variables)
     }
 }

@@ -9,24 +9,23 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    var lessons : [Lesson]
+     var lesson : LessonContent
     @Binding var globalThemeBinding : ThemeType
     
     func listRoom()-> some View {
         var homeButton : LessonView
         switch globalThemeBinding {
         case .mode:
-            homeButton = LessonView(lessons: lessons[0], globalThemeBinding: $globalThemeBinding)
+            homeButton = LessonView(lesson: lesson , globalThemeBinding: $globalThemeBinding)
             
         case .game:
-            homeButton = LessonView( lessons : lessons[1], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView(lesson: lesson, globalThemeBinding: $globalThemeBinding )
             
         case .cinema:
-            homeButton = LessonView( lessons : lessons[2], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView(lesson: lesson, globalThemeBinding: $globalThemeBinding )
             
         case .music:
-            homeButton = LessonView( lessons : lessons[3], globalThemeBinding: $globalThemeBinding )
+            homeButton = LessonView(lesson: lesson, globalThemeBinding: $globalThemeBinding )
         }
         return VStack {
             homeButton
@@ -51,6 +50,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(lessons: Lesson.allLessons, globalThemeBinding: .constant(.music))
+        HomeView(lesson: .variables, globalThemeBinding: .constant(.music))
     }
 }

@@ -13,14 +13,15 @@ struct TabBarView: View {
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
+    @State var lesson : LessonContent = .variables
     var body: some View {
         TabView {
-            HomeView(lessons: Lesson.allLessons, globalThemeBinding: $globalThemeBinding).tabItem {
+            HomeView(lesson: lesson, globalThemeBinding: $globalThemeBinding).tabItem {
                 Image(systemName: "house")
                 Text("Home").tag(1)
             }
 
-            ChallengeView(lesson: Lesson.allLessons[0], globalThemeBinding: $globalThemeBinding).tabItem {
+            ChallengeView(lesson: $lesson, globalThemeBinding: $globalThemeBinding).tabItem {
                 Image( systemName: "hare")
                 Text("Defis").tag(2)
             }
