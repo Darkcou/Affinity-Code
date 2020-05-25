@@ -10,21 +10,23 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var themeSelect : String = "Musique"
+    var lessons : [Lesson]
+    @Binding var globalThemeBinding : ThemeType
+    
     func listRoom()-> some View {
-        var homeButton : LessonsView
-        switch themeSelect {
-        case "Mode":
-            homeButton = LessonsView( globalTheme: themeSelect, gradientBar: GradientData.gradientBlue)
-
-        case "Jeux":
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.myYellow)
-
-        case "Cinéma":
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientGreen)
-
-        default:
-            homeButton = LessonsView( globalTheme : themeSelect, gradientBar: GradientData.gradientPurple)
+        var homeButton : ActivityView
+        switch globalThemeBinding {
+        case .mode:
+            homeButton = ActivityView(lessons: lessons , globalThemeBinding: $globalThemeBinding)
+            
+        case .game:
+            homeButton = ActivityView(lessons: lessons, globalThemeBinding: $globalThemeBinding )
+            
+        case .cinema:
+            homeButton = ActivityView(lessons: lessons, globalThemeBinding: $globalThemeBinding )
+            
+        case .music:
+            homeButton = ActivityView(lessons: lessons, globalThemeBinding: $globalThemeBinding )
         }
         return VStack {
             homeButton
@@ -32,23 +34,22 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
-                Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
-                ThemeView(globalThemeBinding: $themeSelect)
-            
-                listRoom()
-
-            }
+        NavigationView {
+            ZStack {
+                LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                VStack {
+                    Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
+                    ThemeView(globalThemeBinding: $globalThemeBinding)
+                    listRoom()
+                }
+                .navigationBarTitle("Cours de Swift", displayMode: .inline)
             }
         }
     }
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(lessons: allLessons(), globalThemeBinding: .constant(.music))
     }
 }

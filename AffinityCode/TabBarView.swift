@@ -12,9 +12,11 @@ struct TabBarView: View {
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
+    @State var globalThemeBinding : ThemeType = .music
+    @State var lessons : [Lesson] = allLessons()
     var body: some View {
         TabView {
-            HomeView().tabItem {
+            HomeView(lessons: lessons, globalThemeBinding: $globalThemeBinding).tabItem {
                 Image(systemName: "house")
                 Text("Home").tag(1)
             }
@@ -23,7 +25,7 @@ struct TabBarView: View {
                 Image( systemName: "hare")
                 Text("Defis").tag(2)
             }
-        }.accentColor(.white).edgesIgnoringSafeArea(.top)
+        }//.accentColor(.white).edgesIgnoringSafeArea(.top)
     }
 }
 

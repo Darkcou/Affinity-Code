@@ -9,23 +9,22 @@
 import SwiftUI
 
 struct ThemeView: View {
-    @Binding var globalThemeBinding: String
-    var localTheme: String = "Musique"
-    var icone: String = "music"
-    var gradientTheme : Gradient = GradientData.gradientPurple
+     @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
-        HStack {
-            ButtonThemeView(globalThemeBinding: $globalThemeBinding, localTheme: "Musique", icone: "music", gradientTheme: GradientData.gradientPurple).padding(8)
-            ButtonThemeView(globalThemeBinding: $globalThemeBinding, localTheme: "Mode", icone: "mode", gradientTheme: GradientData.gradientBlue).padding(8)
-            ButtonThemeView(globalThemeBinding: $globalThemeBinding, localTheme: "Jeux", icone: "game", gradientTheme: GradientData.myYellow).padding(8)
-            ButtonThemeView(globalThemeBinding: $globalThemeBinding, localTheme: "Cinéma", icone: "cinema", gradientTheme: GradientData.gradientGreen).padding(8)
+        VStack {
+            Text("Personnalisez vos exemples:").foregroundColor(Color.white).font(.system(size: 25))
+            HStack {
+                ForEach(ThemeType.allCases, id: \.self) { theme in
+                    ButtonThemeView(globalThemeBinding: self.$globalThemeBinding, localTheme: theme).padding(8)
+                }
+            }
         }
     }
 }
 
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeView(globalThemeBinding: .constant("music"))
+        ThemeView(globalThemeBinding: .constant(.music))
     }
 }

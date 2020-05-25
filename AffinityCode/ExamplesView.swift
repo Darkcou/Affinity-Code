@@ -10,17 +10,36 @@ import SwiftUI
 
 struct ExamplesView: View {
     
-    @Binding var lessonName: String
-    @Binding var themeImageExamples : String
-    @Binding  var themeExample : String
+    @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
-        Text("\(lessonName)")
+        ZStack {
+            HStack {
+                VStack {
+                    Text("Mot clé")
+                Image("key").resizable().frame(width: 60, height: 60)
+                    Text("var").bold()
+                }
+                Text("+").font(.system(size: 50))
+                VStack {
+                    Text("Nom de la variable")
+                    Image(globalThemeBinding.exempleImage).resizable().frame(width: 60, height: 60)
+                    Text(globalThemeBinding.exempleName).bold()
+                }
+                Text("=").font(.system(size: 50))
+                VStack {
+                    Text("Donnée")
+                    Image(globalThemeBinding.exempleImage2).resizable().frame(width: 60, height: 60)
+                    Text(globalThemeBinding.exempleName2).bold()
+                }
+            }
+            .padding().background(LinearGradient(gradient: globalThemeBinding.gradient, startPoint: .leading, endPoint: .trailing))
+        }
     }
 }
 
 struct ExamplesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExamplesView(lessonName: .constant("Variables"), themeImageExamples: .constant( "heart.fill") , themeExample: .constant("Musique"))
+        ExamplesView(globalThemeBinding: .constant(.music))
     }
 }
