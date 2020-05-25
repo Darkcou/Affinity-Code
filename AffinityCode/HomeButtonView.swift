@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HomeButtonView: View {
-   var lesson : LessonContent
+   var lesson : Lesson
      @Binding var globalThemeBinding: ThemeType
          var body: some View {
             NavigationLink(destination: LessonDetailsView(lesson: lesson, globalThemeBinding: self.$globalThemeBinding)) {
@@ -29,6 +29,6 @@ struct HomeButtonView: View {
 
 struct HomeButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeButtonView(lesson: .variables, globalThemeBinding: .constant(.music))
+        HomeButtonView(lesson: .init(lessonTitle: "Variables", content: "Cours 1"), globalThemeBinding: .constant(.music))
     }
 }

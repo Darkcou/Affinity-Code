@@ -27,7 +27,7 @@ final class QuizzManager: ObservableObject {
         
         Question(question: "Quel symbole mathématique assigne une valeur à une variable?", answer: Answer(text: "="), possibleAnswers: [Answer(text: "+"), Answer(text: "/"), Answer(text: "-"), Answer(text: "=")]),
         
-        Question(question: "La valeur d'une variable peut-elle changer ?", answer: Answer(text: "Oui"), possibleAnswers: [Answer(text: "Non"), Answer(text: "Peut être"), Answer(text: "Ca dépends"), Answer(text: "Oui")]),
+        Question(question: "La valeur d'une variable peut-elle changer ?", answer: Answer(text: "Oui"), possibleAnswers: [Answer(text: "Non"), Answer(text: "Peut être"), Answer(text: "Ça dépend"), Answer(text: "Oui")]),
         
      /*   Question(question: "Quel est le type pour du texte ?", answer: Answer(text: "String"), possibleAnswers: [Answer(text: "String"), Answer(text: "Sfring"), Answer(text: "Strong"), Answer(text: "Sting")]),
         

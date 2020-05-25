@@ -13,7 +13,7 @@ struct TabBarView: View {
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
-    @State var lesson : LessonContent = .variables
+    @State var lesson : Lesson = .init(lessonTitle: "Variables", content: "Cours 1")
     var body: some View {
         TabView {
             HomeView(lesson: lesson, globalThemeBinding: $globalThemeBinding).tabItem {

@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct LessonView: View {
-    var lesson : LessonContent
+    var lesson : Lesson
     @Binding var globalThemeBinding : ThemeType
     
     var body: some View {
             VStack {
-                ForEach(LessonContent.allCases, id: \.self) { content in
-                    NavigationLink(destination: LessonDetailsView(lesson: self.lesson, globalThemeBinding: self.$globalThemeBinding)) {
+                ForEach(Lesson.allLessons, id: \.self) { content in
+                    NavigationLink(destination: LessonDetailsView(lesson: content, globalThemeBinding: self.$globalThemeBinding)) {
                         ZStack {
-                            Text("\(content.rawValue)")
+                            Text(content.lessonTitle)
                                 .bold()
                                 .font(.system(size:30))
                                 .foregroundColor(Color.black)
@@ -34,6 +34,6 @@ struct LessonView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonView(lesson: .variables, globalThemeBinding: .constant(.music))
+        LessonView(lesson: .init(lessonTitle: "Variables", content: "Cours 1"), globalThemeBinding: .constant(.music))
     }
 }

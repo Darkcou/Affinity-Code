@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
-     var lesson : LessonContent
+     var lesson : Lesson
     @Binding var globalThemeBinding : ThemeType
     
     func listRoom()-> some View {
@@ -48,6 +48,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(lesson: .variables, globalThemeBinding: .constant(.music))
+        HomeView(lesson: .init(lessonTitle: "Variables", content: "Cours 1"), globalThemeBinding: .constant(.music))
     }
 }

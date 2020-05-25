@@ -101,52 +101,60 @@ enum ThemeType : CaseIterable {
     }
 }
 
-enum LessonContent : String, CaseIterable {
-    case variables = "Variables"
-    case stringsEntiers = "Strings et Entiers"
-    case doublesBooléens = "Doubles et booléens"
-    case stringsMulti = "Strings multi-lignes"
-    
-    var lessonTitle: String {
-    switch self {
-    case .variables:
-        return "Variables"
-    case .stringsEntiers:
-        return "Strings et entiers"
-    case .doublesBooléens:
-        return "Doubles et booléens"
-    case .stringsMulti:
-        return "Strings multi-lignes"
-        }
-    }
-    var lessonContent: String {
-        switch self {
-        case .variables:
-            return "Les variables sont une sorte de boîte où l'on peut stocker des données. Et l'on peut modifier ces données. Pour déclarer une variable, on utilise le mot clé 'var' suivi d'un nom. On peut utiliser n'importe quel nom."
-        case .stringsEntiers:
-            return "Cours 2"
-        case .doublesBooléens:
-            return "Cours 3"
-        case .stringsMulti:
-            return "Cours 4"
-            }
-        }
-    }
-
-struct Lesson {
-    var lesson: LessonContent
+/*enum LessonContent : String, CaseIterable {
+ case variables = "Variables"
+ case stringsEntiers = "Strings et Entiers"
+ case doublesBooléens = "Doubles et booléens"
+ case stringsMulti = "Strings multi-lignes"
+ 
+ var lessonTitle: String {
+ switch self {
+ case .variables:
+ return "Variables"
+ case .stringsEntiers:
+ return "Strings et entiers"
+ case .doublesBooléens:
+ return "Doubles et booléens"
+ case .stringsMulti:
+ return "Strings multi-lignes"
+ }
+ }
+ var lessonContent: String {
+ switch self {
+ case .variables:
+ return "Les variables sont une sorte de boîte où l'on peut stocker des données. Et l'on peut modifier ces données. Pour déclarer une variable, on utilise le mot clé 'var' suivi d'un nom. On peut utiliser n'importe quel nom."
+ case .stringsEntiers:
+ return "Cours 2"
+ case .doublesBooléens:
+ return "Cours 3"
+ case .stringsMulti:
+ return "Cours 4"
+ }
+ }
+ }
+ */
+struct Lesson : Hashable {
+    var lessonTitle: String
     var content: String
-    var type : ThemeType
+    
+    static let allLessons : [Lesson] =
+        [Lesson.init(lessonTitle: "Variables", content: "Les variables sont une sorte de boîte où l'on peut stocker des données. Et l'on peut modifier ces données. Pour déclarer une variable, on utilise le mot clé 'var' suivi d'un nom. On peut utiliser n'importe quel nom."),
+         
+         Lesson.init(lessonTitle: "Strings et entiers", content: "Chaque donnée a un type. Le texte est de type String, il doit être entre guillemets pour le signifier. Les entiers sont de type Int, il n'y a pas besoin de les mettre entre guillemets. On ne peut pas changer une variable de type String en Int."),
+         
+         Lesson.init(lessonTitle: "Doubles et Booléens", content: "Les décimals sont de type Double, on peut aussi y inclure des entiers. Lorsqu'on veut signifier une situation vrai ou fausse, on utilise le type Bool."),
+         
+         Lesson.init(lessonTitle: "Strings multi-lignes", content: "Les Strings multi-lignes sont de simples Strings mais échelonnés sur plusieurs lignes. Pour les déclarer, on utilise 3 guillements au début et à la fin d'un String.")]
 }
-/*
- func getTitleString() -> String {
+
+struct Example {
+    var exampleName : [String]
+    var exampleImage : [String]
+}
+
+/*func getTitleString() -> String {
  return self.title.rawValue
  }
- }
- static let allLessons : [Lesson] = [Lesson.init(title: Activity.variables, content: "Cours 1", type: .music),
- Lesson.init(title: Activity.stringsEntiers, content: "Cours 2", type: .music),
- Lesson.init(title: .doublesBooléens, content: "Cours 3", type: .music),
- Lesson.init(title: Activity.stringsMulti, content: "Cours 4", type: .music)]
  }
  
  enum allLessons: String {
@@ -154,5 +162,5 @@ struct Lesson {
  case stringInt = "Chaque donnée a un type. Le texte est de type String, il doit être entre guillemets pour le signifier. Les entiers sont de type Int, il n'y a pas besoin de les mettre entre guillemets. On ne peut pas changer une variable de type String en Int."
  case doubleBool = "Les décimals sont de type Double, on peut aussi y inclure des entiers. Lorsqu'on veut signifier une situation vrai ou fausse, on utilise le type Bool."
  case stringMulti = "Les Strings multi-lignes sont de simples Strings mais échelonnés sur plusieurs lignes. Pour les déclarer, on utilise 3 guillements au début et à la fin d'un String."
- }
- */
+ } */
+

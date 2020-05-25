@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LessonDetailsView: View {
-    var lesson : LessonContent
+    var lesson : Lesson
     @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
@@ -23,13 +23,13 @@ struct LessonDetailsView: View {
                     ExamplesView(globalThemeBinding: $globalThemeBinding)
                     ChallengeButtonLessonDetails(globalThemeBinding: $globalThemeBinding).padding(40)
                 }
-            .navigationBarTitle("Title")
+                .navigationBarTitle("\(lesson.lessonTitle)")
             }
         }
     }
 
 struct LessonDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailsView(lesson: .variables, globalThemeBinding: .constant( .music))
+        LessonDetailsView(lesson: .init(lessonTitle: "Variables", content: "Cours 1"), globalThemeBinding: .constant( .music))
     }
 }

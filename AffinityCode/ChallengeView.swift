@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct ChallengeView: View {
-    @Binding var lesson : LessonContent
+    @Binding var lesson : Lesson
     @Binding var globalThemeBinding : ThemeType
     var body: some View {
         NavigationView {
@@ -32,7 +32,7 @@ struct ChallengeView: View {
     
     struct ChallengeView_Previews: PreviewProvider {
         static var previews: some View {
-            ChallengeView(lesson: .constant(.variables), globalThemeBinding: .constant(.music))
+            ChallengeView(lesson: .constant(.init(lessonTitle: "Variables", content: "Cours 1")), globalThemeBinding: .constant(.music))
         }
     }
 }
