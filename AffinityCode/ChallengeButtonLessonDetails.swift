@@ -14,7 +14,7 @@ struct ChallengeButtonLessonDetails: View {
     
     var body: some View {
         NavigationLink(destination: QuizzView() ) {
-            Text("Défi")
+            Text("Test")
             .bold()
                 .font(.system(size:30))
                 .frame(width: 100, height: 30, alignment: .center)

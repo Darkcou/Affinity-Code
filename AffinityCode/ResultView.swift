@@ -22,7 +22,15 @@ struct ResultView: View {
                     VStack {
                         VStack {
                             Text("Vous avez")
-                            Text("\(score) réponses")
+                            if score == 0 {
+                            Text("\(score) réponse")
+                            }
+                            else if score == 1 {
+                                Text("\(score) réponse")
+                            }
+                            else {
+                               Text("\(score) réponses")
+                            }
                             Text("correctes")
                         }
                         .modifier(ResultTextModifier())

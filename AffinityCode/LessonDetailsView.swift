@@ -13,10 +13,8 @@ struct LessonDetailsView: View {
     @Binding var globalThemeBinding: ThemeType
     
     var body: some View {
-        NavigationView{
             ZStack {
                 LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
                 VStack {
                     ThemeView(globalThemeBinding: self.$globalThemeBinding)
                     
@@ -25,10 +23,10 @@ struct LessonDetailsView: View {
                     ExamplesView(globalThemeBinding: $globalThemeBinding)
                     ChallengeButtonLessonDetails(globalThemeBinding: $globalThemeBinding).padding(40)
                 }
+            .navigationBarTitle("Title")
             }
         }
     }
-}
 
 struct LessonDetailsView_Previews: PreviewProvider {
     static var previews: some View {

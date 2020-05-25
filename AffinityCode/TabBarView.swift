@@ -25,7 +25,7 @@ struct TabBarView: View {
                 Image( systemName: "hare")
                 Text("Defis").tag(2)
             }
-        }.accentColor(.white).edgesIgnoringSafeArea(.top)
+        }
     }
 }
 

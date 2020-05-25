@@ -29,7 +29,7 @@ final class QuizzManager: ObservableObject {
         
         Question(question: "La valeur d'une variable peut-elle changer ?", answer: Answer(text: "Oui"), possibleAnswers: [Answer(text: "Non"), Answer(text: "Peut être"), Answer(text: "Ca dépends"), Answer(text: "Oui")]),
         
-        Question(question: "Quel est le type pour du texte ?", answer: Answer(text: "String"), possibleAnswers: [Answer(text: "String"), Answer(text: "Sfring"), Answer(text: "Strong"), Answer(text: "Sting")]),
+     /*   Question(question: "Quel est le type pour du texte ?", answer: Answer(text: "String"), possibleAnswers: [Answer(text: "String"), Answer(text: "Sfring"), Answer(text: "Strong"), Answer(text: "Sting")]),
         
         Question(question: "Quel est le type pour les entiers ?", answer: Answer(text: "Int"), possibleAnswers: [Answer(text: "Ent"), Answer(text: "Int"), Answer(text: "Ents"), Answer(text: "Intg")]),
         
@@ -50,7 +50,7 @@ final class QuizzManager: ObservableObject {
         Question(question: "Quel est le symbole permettant de revenir à la ligne dans un String multi-lignes ?", answer: Answer(text: "/"), possibleAnswers: [Answer(text: "-"), Answer(text: ">"), Answer(text: "*"), Answer(text: "/")]),
         
         Question(question: "Peut-on écrire du texte sur la même ligne que les guillemets ?", answer: Answer(text: "Non"), possibleAnswers: [Answer(text: "Oui"), Answer(text: "Non"), Answer(text: "Peut être"), Answer(text: "Ca dépends")])
-        
+        */
     ]
     
     init() {

@@ -36,13 +36,11 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
                 VStack {
-                    Text("Cours de Swift").foregroundColor(Color.white).font(.system(size: 60)).padding()
                     ThemeView(globalThemeBinding: $globalThemeBinding)
                         listRoom()
-                    
                 }
+                .navigationBarTitle("Cours de Swift", displayMode: .inline)
             }
         }
     }
