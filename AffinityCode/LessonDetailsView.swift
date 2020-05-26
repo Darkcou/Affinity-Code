@@ -23,7 +23,7 @@ struct LessonDetailsView: View {
                 LessonContentView(lesson: lesson)
                 Spacer()
                 ExamplesView(globalThemeBinding: $globalThemeBinding)
-                LessonButtonChallengeView(globalThemeBinding: $globalThemeBinding).padding(40)
+                LessonButtonChallengeView(quizzActivity:lesson.lessonTitle,globalThemeBinding: $globalThemeBinding).padding(40)
             }
             .navigationBarTitle("\(lesson.lessonTitle)")
         }

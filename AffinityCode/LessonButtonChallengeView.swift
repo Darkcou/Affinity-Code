@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct LessonButtonChallengeView: View {
+    var quizzActivity:String
     @Binding var globalThemeBinding: ThemeType
     var body: some View {
-        NavigationLink(destination: QuizzView() ) {
+        NavigationLink(destination: QuizzView(activity: self.quizzActivity) ) {
             Text("Test")
             .bold()
                 .font(.system(size:30))
@@ -26,6 +27,6 @@ struct LessonButtonChallengeView: View {
 
 struct LessonButtonChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonButtonChallengeView(globalThemeBinding: .constant( .music))
+        LessonButtonChallengeView(quizzActivity:"Variables",globalThemeBinding: .constant( .music))
     }
 }

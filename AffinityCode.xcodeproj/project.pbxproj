@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		155B1C20246BDB5300879520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C1F246BDB5300879520 /* AppDelegate.swift */; };
 		155B1C22246BDB5300879520 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C21246BDB5300879520 /* SceneDelegate.swift */; };
-		155B1C24246BDB5300879520 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C23246BDB5300879520 /* ContentView.swift */; };
 		155B1C26246BDB5500879520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155B1C25246BDB5500879520 /* Assets.xcassets */; };
 		155B1C29246BDB5500879520 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155B1C28246BDB5500879520 /* Preview Assets.xcassets */; };
 		155B1C2C246BDB5500879520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155B1C2A246BDB5500879520 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 		155B1C36246BEF6D00879520 /* ButtonThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C35246BEF6D00879520 /* ButtonThemeView.swift */; };
 		155B1C3A246BFA8A00879520 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C39246BFA8A00879520 /* HomeView.swift */; };
 		155B1C3C246BFB8D00879520 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C3B246BFB8D00879520 /* ChallengeView.swift */; };
-		155B1C40246BFC6500879520 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1C3F246BFC6500879520 /* HomeButtonView.swift */; };
 		155B1CF424740EB300879520 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1CF324740EB300879520 /* ThemeView.swift */; };
 		155B1CF8247521CC00879520 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1CF7247521CC00879520 /* TabBarView.swift */; };
 		155B1D002477B74200879520 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1CFF2477B74200879520 /* Activity.swift */; };
@@ -26,7 +24,6 @@
 		155B1D07247C0BF400879520 /* LessonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1D06247C0BF400879520 /* LessonContentView.swift */; };
 		155B1D09247C113000879520 /* ChallengeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1D08247C113000879520 /* ChallengeButtonView.swift */; };
 		155B1D0B247C13E000879520 /* LessonButtonChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B1D0A247C13E000879520 /* LessonButtonChallengeView.swift */; };
-		2E46E2B32472D58500685E4A /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E46E2B22472D58500685E4A /* QuestionView.swift */; };
 		2E7FABFC24753AEA00FC06B2 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FABFB24753AEA00FC06B2 /* ResultView.swift */; };
 		2E7FAC0024753B8A00FC06B2 /* PlayAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FABFF24753B8A00FC06B2 /* PlayAgainButton.swift */; };
 		2E7FAC022475412400FC06B2 /* QuizzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FAC012475412400FC06B2 /* QuizzManager.swift */; };
@@ -43,7 +40,6 @@
 		155B1C1C246BDB5300879520 /* AffinityCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AffinityCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155B1C1F246BDB5300879520 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		155B1C21246BDB5300879520 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		155B1C23246BDB5300879520 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		155B1C25246BDB5500879520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		155B1C28246BDB5500879520 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		155B1C2B246BDB5500879520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +48,6 @@
 		155B1C35246BEF6D00879520 /* ButtonThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonThemeView.swift; sourceTree = "<group>"; };
 		155B1C39246BFA8A00879520 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		155B1C3B246BFB8D00879520 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
-		155B1C3F246BFC6500879520 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		155B1CF324740EB300879520 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		155B1CF7247521CC00879520 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		155B1CFF2477B74200879520 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -61,7 +56,6 @@
 		155B1D06247C0BF400879520 /* LessonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonContentView.swift; sourceTree = "<group>"; };
 		155B1D08247C113000879520 /* ChallengeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeButtonView.swift; sourceTree = "<group>"; };
 		155B1D0A247C13E000879520 /* LessonButtonChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonButtonChallengeView.swift; sourceTree = "<group>"; };
-		2E46E2B22472D58500685E4A /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2E7FABFB24753AEA00FC06B2 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		2E7FABFF24753B8A00FC06B2 /* PlayAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAgainButton.swift; sourceTree = "<group>"; };
 		2E7FAC012475412400FC06B2 /* QuizzManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzManager.swift; sourceTree = "<group>"; };
@@ -104,28 +98,24 @@
 		155B1C1E246BDB5300879520 /* AffinityCode */ = {
 			isa = PBXGroup;
 			children = (
-				2E46E2B22472D58500685E4A /* QuestionView.swift */,
 				2E7FAC0F247560BB00FC06B2 /* ResultTextModifier.swift */,
-				2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */,
-				2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */,
-				2E7FAC072475548E00FC06B2 /* AnswerButton.swift */,
-				2E7FAC09247555C700FC06B2 /* QuizzView.swift */,
-				2E7FABFF24753B8A00FC06B2 /* PlayAgainButton.swift */,
-				2E7FABFB24753AEA00FC06B2 /* ResultView.swift */,
-				2ECFAC7F246C363000965D7F /* ActivityView.swift */,
 				155B1C1F246BDB5300879520 /* AppDelegate.swift */,
 				155B1C21246BDB5300879520 /* SceneDelegate.swift */,
-				155B1C23246BDB5300879520 /* ContentView.swift */,
 				155B1D032477B92200879520 /* ModelView */,
 				155B1C41246BFD1200879520 /* Model */,
+				155B1CF7247521CC00879520 /* TabBarView.swift */,
 				155B1C39246BFA8A00879520 /* HomeView.swift */,
 				155B1CF324740EB300879520 /* ThemeView.swift */,
-				155B1C3F246BFC6500879520 /* HomeButtonView.swift */,
 				155B1C35246BEF6D00879520 /* ButtonThemeView.swift */,
-				155B1C3B246BFB8D00879520 /* ChallengeView.swift */,
+				2ECFAC7F246C363000965D7F /* ActivityView.swift */,
+				2E7FAC0B24755CA400FC06B2 /* LessonDetailsView.swift */,
+				2E7FAC0D24755D8200FC06B2 /* ExamplesView.swift */,
 				155B1D0A247C13E000879520 /* LessonButtonChallengeView.swift */,
+				155B1C3B246BFB8D00879520 /* ChallengeView.swift */,
 				155B1D08247C113000879520 /* ChallengeButtonView.swift */,
-				155B1CF7247521CC00879520 /* TabBarView.swift */,
+				2E7FAC09247555C700FC06B2 /* QuizzView.swift */,
+				2E7FAC072475548E00FC06B2 /* AnswerButton.swift */,
+				2E7FABFB24753AEA00FC06B2 /* ResultView.swift */,
 				155B1C25246BDB5500879520 /* Assets.xcassets */,
 				155B1C2A246BDB5500879520 /* LaunchScreen.storyboard */,
 				155B1C2D246BDB5500879520 /* Info.plist */,
@@ -146,6 +136,7 @@
 		155B1C41246BFD1200879520 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FABFF24753B8A00FC06B2 /* PlayAgainButton.swift */,
 				2E7FAC032475416200FC06B2 /* Question.swift */,
 				155B1CFF2477B74200879520 /* Activity.swift */,
 				155B1D04247BEA1D00879520 /* Lesson.swift */,
@@ -252,15 +243,12 @@
 				2E7FAC10247560BB00FC06B2 /* ResultTextModifier.swift in Sources */,
 				2E7FAC0E24755D8200FC06B2 /* ExamplesView.swift in Sources */,
 				155B1D09247C113000879520 /* ChallengeButtonView.swift in Sources */,
-				2E46E2B32472D58500685E4A /* QuestionView.swift in Sources */,
 				155B1C34246BEEF200879520 /* ModelButton.swift in Sources */,
 				2E7FAC0C24755CA400FC06B2 /* LessonDetailsView.swift in Sources */,
 				155B1D002477B74200879520 /* Activity.swift in Sources */,
 				155B1C3C246BFB8D00879520 /* ChallengeView.swift in Sources */,
 				155B1C22246BDB5300879520 /* SceneDelegate.swift in Sources */,
 				155B1C36246BEF6D00879520 /* ButtonThemeView.swift in Sources */,
-				155B1C40246BFC6500879520 /* HomeButtonView.swift in Sources */,
-				155B1C24246BDB5300879520 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

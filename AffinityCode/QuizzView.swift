@@ -10,13 +10,15 @@ import SwiftUI
 
 struct QuizzView: View {
     
-    @ObservedObject private var quizManager = QuizzManager(activity: "Variables")
     
-    @State private var activity = "Variables"
     @State private var guessedCorrectly = false
     @State private var showResult = false
     @State private var textColor = Color.white
-    
+    @ObservedObject private var quizManager : QuizzManager
+    init(activity:String = "") {
+        quizManager=QuizzManager(activity: activity)
+    }
+  
     var body: some View {
         ZStack {
             LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
@@ -58,7 +60,7 @@ struct QuizzView: View {
                 quizManager.questionsAsked = 0
                 quizManager.correctAnswers = 0
                 textColor = .white
-                quizManager.getRandomQuestion(activity: activity)
+                quizManager.getRandomQuestion()
             }
             
             private func updateResult() {
@@ -74,7 +76,7 @@ struct QuizzView: View {
                 // Executes the nextRound method at the dispatch time on the main queue
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                     self.textColor = .white
-                    self.quizManager.getRandomQuestion(activity: self.activity)
+                    self.quizManager.getRandomQuestion()
                 }
             }
         }
@@ -82,6 +84,6 @@ struct QuizzView: View {
 
 struct QuizzView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizzView()
+        QuizzView(activity: "Variables" )
     }
 }

@@ -15,22 +15,30 @@ struct ResultView: View {
     var score: Int
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
-                    
+       ZStack {
+        LinearGradient(gradient: GradientData.myBlack, startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
                     VStack {
-                        VStack {
-                            Text("Vous avez")
-                            Text("\(score) réponses")
-                            Text("correctes")
+                        Text("Vous avez")
+                        if score == 0 {
+                        Text("\(score) réponse")
                         }
-                        .modifier(ResultTextModifier())
-                        
-                        PlayAgainButton(isResultPresented: $isPresented)
+                        else if score == 1 {
+                            Text("\(score) réponse")
+                        }
+                        else {
+                           Text("\(score) réponses")
+                        }
+                        Text("correctes")
                     }
-                    .padding()
+                    .modifier(ResultTextModifier())
+                    
+                    PlayAgainButton(isResultPresented: $isPresented)
                 }
+                .padding()
+            }
             }
         }
 

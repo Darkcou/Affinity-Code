@@ -18,7 +18,7 @@ struct Question {
 
 extension Question: Equatable {
     func getType() -> String {
-        return self.type.rawValue
+        return self.type.name
     }
 }
 

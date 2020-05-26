@@ -16,6 +16,7 @@ final class QuizzManager: ObservableObject {
     //Propriété qui suivent l'index d'une question et les questions déjà posées.
     private var questionsUsed = [Question]()
     
+    var quizzActivity:String
     var questionsAsked = 0
     var correctAnswers = 0
     
@@ -53,23 +54,29 @@ final class QuizzManager: ObservableObject {
         
     ]
     
+    
     func filtreQuestions(activity:String) -> [Question] {
         var myQuestion:[Question] = []
-        for question in questions{
-            if question.getType() == activity{
-                myQuestion.append(question)
-            }
+        if(activity==""){
+            myQuestion = questions
         }
+        else{
+            for question in questions{
+                if question.getType() == activity {
+                    myQuestion.append(question)
+                }
+            }}
         return myQuestion
     }
     
     init(activity:String) {
-        getRandomQuestion(activity:activity)
+        quizzActivity = activity
+        getRandomQuestion()
     }
     
     //Fonction qui retourne une question aléatoire et vérifie si la question a été posée avant.
-    func getRandomQuestion(activity:String) {
-        guard var randomQuestion = filtreQuestions(activity: activity).shuffled().first else { return }
+    func getRandomQuestion() {
+        guard var randomQuestion = filtreQuestions(activity: quizzActivity).shuffled().first else { return }
         
         if questionsUsed.isEmpty || !questionsUsed.contains(randomQuestion) {
             questionsUsed.append(randomQuestion)
@@ -77,7 +84,7 @@ final class QuizzManager: ObservableObject {
         } else {
             for question in questionsUsed {
                 while randomQuestion == question {
-                    randomQuestion = filtreQuestions(activity: activity).shuffled().first!
+                    randomQuestion = filtreQuestions(activity: quizzActivity).shuffled().first!
                     questionsUsed.append(randomQuestion)
                     currentQuestion = randomQuestion
                 }

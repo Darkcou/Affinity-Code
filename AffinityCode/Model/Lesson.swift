@@ -21,6 +21,6 @@ struct Example {
 
 func allLessons() -> [Lesson] {
     var allLesson:[Lesson]=[]
-    Activity.allCases.map { lesson in allLesson.append(Lesson.init(lessonTitle: lesson.name, content: lesson.contient))}
+    Activity.allCases.forEach { lesson in allLesson.append(Lesson.init(lessonTitle: lesson.name, content: lesson.contient))}
     return allLesson
 }
